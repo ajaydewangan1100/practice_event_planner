@@ -17,11 +17,6 @@ userRouter.post("/signup", async (req, res) => {
     }
 
     const user = await User.create({ firstName, email, password, age });
-    // console.log(user);
-
-    const updatedUser = await User.update({});
-
-    updatedUser.save();
 
     res.status(201).json(user);
   } catch (error) {
@@ -39,7 +34,6 @@ userRouter.post("/login", async (req, res) => {
     }
 
     const user = await User.findOne({ email });
-    // console.log(user);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }

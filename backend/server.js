@@ -1,8 +1,6 @@
 import express from "express";
 import { config } from "dotenv";
-import userRouter from "./router/user.router.js";
 import dbConnection from "./config/dbConfig.js";
-import isLoggedIn from "./middlewares/userMiddleware.js";
 import cookieParser from "cookie-parser";
 
 config();
@@ -15,8 +13,15 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello, World!" });
 });
 
+// Router imports here
+import userRouter from "./router/user.router.js";
+import eventRouter from "./router/event.router.js";
+// Middleware imports here
+import isLoggedIn from "./middlewares/userMiddleware.js";
+import upload from "./config/multerConfig.js";
+
 app.use("/api/v1/user", userRouter);
-app.use("/api/v1/event", isLoggedIn, eventRouter);
+app.use("/api/v1/event", isLoggedIn, upload.single("image"), eventRouter);
 
 app.listen(process.env.PORT, () => {
   try {
