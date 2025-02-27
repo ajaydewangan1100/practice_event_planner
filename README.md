@@ -1,14 +1,10 @@
 # EVENT PLANNER
 
-## Steps
+## Steps to run Backend
 
 1. `cd backend`
-2. `npm init -y`
-3. `npm i express cors dotenv morgan nodemon mongoose`
-4. create `server.js`
-5. `"type": "module"`
-6. `.env`
-7.
+2. `npm install`
+3. `npm run start`
 
 ## Routes -
 
@@ -17,7 +13,7 @@
 - POST - `/signup`
 - POST - `/signin`
 
-### EVENTS routes
+### EVENT routes
 
 - POST - `/createevent` - create a new event
 - DELETE - `/deleteevent` - delete a event
@@ -36,3 +32,5 @@
 - bcrypt
 - jsonwebtoken
 - cookie-parser
+- cloudinary
+- multer
