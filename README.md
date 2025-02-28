@@ -4,7 +4,8 @@
 
 1. `cd backend`
 2. `npm install`
-3. `npm run start`
+3. `Create .env & Update with your own configuration`
+4. `npm run start`
 
 ## Routes -
 
@@ -17,9 +18,9 @@
 
 - POST - `/createevent` - create a new event
 - DELETE - `/deleteevent` - delete a event
-- PATCH - `/updateevent` - update a sigle event
-- GET - `/getsingleevent` - get sigle event
-- GET - `/events` - show all events
+- PATCH - `/updateevent` - update a single event
+- GET - `/getsingleevent` - get single event
+- GET - `/allevents` - show all events
 
 ## Dependencies
 

@@ -18,10 +18,12 @@ import userRouter from "./router/user.router.js";
 import eventRouter from "./router/event.router.js";
 // Middleware imports here
 import isLoggedIn from "./middlewares/userMiddleware.js";
-import upload from "./config/multerConfig.js";
+import morgan from "morgan";
+
+app.use(morgan("dev"));
 
 app.use("/api/v1/user", userRouter);
-app.use("/api/v1/event", isLoggedIn, upload.single("image"), eventRouter);
+app.use("/api/v1/event", isLoggedIn, eventRouter);
 
 app.listen(process.env.PORT, () => {
   try {

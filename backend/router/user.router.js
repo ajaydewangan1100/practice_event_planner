@@ -53,7 +53,7 @@ userRouter.post("/login", async (req, res) => {
     user.password = null;
 
     res.cookie("token", token);
-    res.status(201).json(user);
+    res.status(200).json(user);
   } catch (error) {
     return res.status(500).json({ message: "Server error" });
   }
